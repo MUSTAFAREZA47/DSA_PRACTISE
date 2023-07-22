@@ -67,11 +67,17 @@ numDays = int(input("How many day's temperature?"))
 total = 0
 temp = []
 for i in range(numDays):
-    nextDay = int(input("Day" + str(i) + "'s high temp :"))
-    total += nextDay
-
+    nextDay = int(input("Day" + str(i + 1) + "'s high temp :"))
+    temp.append(nextDay)
+    total += temp[i]
 avg = round(total/numDays, 2)
-print("\nAverage =" + str(avg))
+print("\nAverage Temperature=" + str(avg))
+
+tempAbove = 0
+for i in temp:
+    if i > avg:
+        tempAbove += 1
+print(str(tempAbove) + "day(s) above average")
 
 
 
